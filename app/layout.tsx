@@ -4,6 +4,7 @@ import "./globals.css";
 import clsx from "clsx";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,11 +27,18 @@ export default function RootLayout({
           inter.className
         )}
       >
-        <main className="parent-container">
-          <Header />
-          {children}
-          <Footer />
-        </main>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <main className="parent-container">
+            <Header />
+            {children}
+            <Footer />
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );

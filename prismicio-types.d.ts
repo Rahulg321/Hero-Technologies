@@ -91,7 +91,120 @@ export type BlogpostDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice = BlogIndexSlice | TextBlockSlice | HeroSlice;
+type CoreteammemberDocumentDataSlicesSlice = LeftImageSliceSlice;
+
+/**
+ * Content for CoreTeamMember documents
+ */
+interface CoreteammemberDocumentData {
+  /**
+   * Name field in *CoreTeamMember*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: coreteammember.name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * Designation field in *CoreTeamMember*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: coreteammember.designation
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  designation: prismic.KeyTextField;
+
+  /**
+   * LinkedinLink field in *CoreTeamMember*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: coreteammember.linkedinlink
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  linkedinlink: prismic.LinkField;
+
+  /**
+   * MemberImage field in *CoreTeamMember*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: coreteammember.memberimage
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  memberimage: prismic.ImageField<never>;
+
+  /**
+   * Slice Zone field in *CoreTeamMember*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: coreteammember.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<CoreteammemberDocumentDataSlicesSlice> /**
+   * Meta Title field in *CoreTeamMember*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: coreteammember.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *CoreTeamMember*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: coreteammember.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *CoreTeamMember*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: coreteammember.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * CoreTeamMember document from Prismic
+ *
+ * - **API ID**: `coreteammember`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type CoreteammemberDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<CoreteammemberDocumentData>,
+    "coreteammember",
+    Lang
+  >;
+
+type PageDocumentDataSlicesSlice =
+  | CoreTeamIndexSlice
+  | BlogIndexSlice
+  | TextBlockSlice
+  | HeroSlice;
 
 /**
  * Content for Page documents
@@ -152,7 +265,10 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-export type AllDocumentTypes = BlogpostDocument | PageDocument;
+export type AllDocumentTypes =
+  | BlogpostDocument
+  | CoreteammemberDocument
+  | PageDocument;
 
 /**
  * Primary content in *BlogIndex → Primary*
@@ -207,6 +323,36 @@ type BlogIndexSliceVariation = BlogIndexSliceDefault;
 export type BlogIndexSlice = prismic.SharedSlice<
   "blog_index",
   BlogIndexSliceVariation
+>;
+
+/**
+ * Default variation for CoreTeamIndex Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CoreTeamIndexSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *CoreTeamIndex*
+ */
+type CoreTeamIndexSliceVariation = CoreTeamIndexSliceDefault;
+
+/**
+ * CoreTeamIndex Shared Slice
+ *
+ * - **API ID**: `core_team_index`
+ * - **Description**: CoreTeamIndex
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CoreTeamIndexSlice = prismic.SharedSlice<
+  "core_team_index",
+  CoreTeamIndexSliceVariation
 >;
 
 /**
@@ -272,6 +418,62 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Primary content in *LeftImageSlice → Primary*
+ */
+export interface LeftImageSliceSliceDefaultPrimary {
+  /**
+   * ImageLeft field in *LeftImageSlice → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: left_image_slice.primary.imageleft
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  imageleft: prismic.BooleanField;
+
+  /**
+   * Content field in *LeftImageSlice → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: left_image_slice.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+/**
+ * Default variation for LeftImageSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LeftImageSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<LeftImageSliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *LeftImageSlice*
+ */
+type LeftImageSliceSliceVariation = LeftImageSliceSliceDefault;
+
+/**
+ * LeftImageSlice Shared Slice
+ *
+ * - **API ID**: `left_image_slice`
+ * - **Description**: LeftImageSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LeftImageSliceSlice = prismic.SharedSlice<
+  "left_image_slice",
+  LeftImageSliceSliceVariation
+>;
+
+/**
  * Primary content in *TextBlock → Primary*
  */
 export interface TextBlockSliceDefaultPrimary {
@@ -329,6 +531,9 @@ declare module "@prismicio/client" {
       BlogpostDocument,
       BlogpostDocumentData,
       BlogpostDocumentDataSlicesSlice,
+      CoreteammemberDocument,
+      CoreteammemberDocumentData,
+      CoreteammemberDocumentDataSlicesSlice,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
@@ -337,10 +542,17 @@ declare module "@prismicio/client" {
       BlogIndexSliceDefaultPrimary,
       BlogIndexSliceVariation,
       BlogIndexSliceDefault,
+      CoreTeamIndexSlice,
+      CoreTeamIndexSliceVariation,
+      CoreTeamIndexSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      LeftImageSliceSlice,
+      LeftImageSliceSliceDefaultPrimary,
+      LeftImageSliceSliceVariation,
+      LeftImageSliceSliceDefault,
       TextBlockSlice,
       TextBlockSliceDefaultPrimary,
       TextBlockSliceVariation,

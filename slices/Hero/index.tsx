@@ -19,7 +19,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       backgroundImage={slice.primary.background_image}
-      classname={clsx("max-h-[80vh]")}
+      classname={clsx("min-h-[80vh]")}
     >
       <div className="big-container">
         <div className="grid grid-cols-1 md:grid-cols-2">

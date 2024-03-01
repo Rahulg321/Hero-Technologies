@@ -1,32 +1,53 @@
 {
   "format": "page",
-  "id": "page",
-  "label": "Page",
+  "id": "coreteammember",
+  "label": "CoreTeamMember",
   "repeatable": true,
   "status": true,
   "json": {
     "Main": {
+      "name": {
+        "type": "Text",
+        "config": {
+          "label": "Name",
+          "placeholder": ""
+        }
+      },
       "uid": {
         "config": {
           "label": "UID"
         },
         "type": "UID"
       },
+      "designation": {
+        "type": "Text",
+        "config": {
+          "label": "Designation",
+          "placeholder": ""
+        }
+      },
+      "linkedinlink": {
+        "type": "Link",
+        "config": {
+          "label": "LinkedinLink",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "memberimage": {
+        "type": "Image",
+        "config": {
+          "label": "MemberImage",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "core_team_index": {
-              "type": "SharedSlice"
-            },
-            "blog_index": {
-              "type": "SharedSlice"
-            },
-            "text_block": {
-              "type": "SharedSlice"
-            },
-            "hero": {
+            "left_image_slice": {
               "type": "SharedSlice"
             }
           }

@@ -23,7 +23,7 @@ const Header = ({ classname }: HeaderProps) => {
 
   return (
     <>
-      <header className={clsx("bg-slate-950 px-2 py-1 text-white", classname)}>
+      <header className={clsx("px-2 py-1", classname)}>
         <nav aria-label="Main-navigation">
           <ul className="flex flex-col justify-between md:m-4 md:flex-row md:items-center md:rounded-xl">
             <div className="flex items-center justify-between">

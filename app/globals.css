@@ -96,6 +96,17 @@
   }
 }
 
+.heading::after {
+  content: "";
+  height: 1px;
+  width: 100%;
+  margin-block: auto;
+  margin-top: 0.3em;
+  margin-bottom: 0.8em;
+  display: block;
+  background-color: black;
+}
+
 .big-container {
   margin-inline: auto;
   width: min(90%, 80.5rem);

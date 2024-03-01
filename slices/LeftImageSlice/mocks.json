@@ -1,0 +1,24 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"imageleft": {
+				"__TYPE__": "BooleanContent",
+				"value": false
+			},
+			"content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Anim ea nulla ullamco in dolore et esse sint nisi id fugiat. Quis commodo minim voluptate tempor adipisicing labore cupidatat est ut id sunt cillum proident do."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

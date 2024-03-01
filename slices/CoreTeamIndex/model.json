@@ -1,0 +1,16 @@
+{
+  "id": "core_team_index",
+  "type": "SharedSlice",
+  "name": "CoreTeamIndex",
+  "description": "CoreTeamIndex",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}

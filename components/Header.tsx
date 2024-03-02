@@ -13,7 +13,9 @@ const nav = [
   { navlink: "/home", navlabel: "Home" },
   { navlink: "/blogs", navlabel: "Blog" },
   { navlink: "/team", navlabel: "Team" },
-  { navlink: "/about", navlabel: "About Us" },
+  { navlink: "/advisors", navlabel: "Advisors" },
+  { navlink: "/investors", navlabel: "Investors" },
+  { navlink: "/about", navlabel: "About" },
   { navlink: "/contact", navlabel: "Contact" },
 ];
 
@@ -23,14 +25,14 @@ const Header = ({ classname }: HeaderProps) => {
 
   return (
     <>
-      <header className={clsx("px-2 py-1", classname)}>
+      <header className={clsx("px-2 py-1 border-b-2", classname)}>
         <nav aria-label="Main-navigation">
           <ul className="flex flex-col justify-between md:m-4 md:flex-row md:items-center md:rounded-xl">
             <div className="flex items-center justify-between">
               <NameLogo />
               <button
                 aria-label="Open menu"
-                className="block text-2xl text-white md:hidden"
+                className="block text-2xl  text-black dark:text-white md:hidden"
                 onClick={() => setIsOpen(true)}
               >
                 <MdMenu />
@@ -38,7 +40,7 @@ const Header = ({ classname }: HeaderProps) => {
             </div>
             <div
               className={clsx(
-                "fixed bottom-0 left-0 right-0 top-0 z-50 flex flex-col items-end gap-4 bg-black pr-4 pt-14  transition-transform duration-300 ease-in-out md:hidden",
+                "fixed bottom-0 left-0 right-0 top-0 z-50 flex flex-col items-end gap-4 bg-black text-white pr-4 pt-14  transition-transform duration-300 ease-in-out md:hidden",
                 isOpen ? "translate-x-0" : "translate-x-[100%]"
               )}
             >

@@ -9,18 +9,32 @@ const BlogPostIndex = async () => {
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {blogposts.map((post, index) => {
           return (
             <div key={index}>
-              <BlogCard heading={post.data.name} />
+              <BlogCard post={post} />
             </div>
           );
         })}
         {blogposts.map((post, index) => {
           return (
             <div key={index}>
-              <BlogCard heading={post.data.name} />
+              <BlogCard post={post} />
+            </div>
+          );
+        })}
+        {blogposts.map((post, index) => {
+          return (
+            <div key={index}>
+              <BlogCard post={post} />
+            </div>
+          );
+        })}
+        {blogposts.map((post, index) => {
+          return (
+            <div key={index}>
+              <BlogCard post={post} />
             </div>
           );
         })}

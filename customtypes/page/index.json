@@ -17,6 +17,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "contact_form_section": {
+              "type": "SharedSlice"
+            },
             "core_team_index": {
               "type": "SharedSlice"
             },

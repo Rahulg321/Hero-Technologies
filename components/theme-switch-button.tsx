@@ -7,19 +7,20 @@ import { FaMoon } from "react-icons/fa";
 import { RiComputerLine } from "react-icons/ri";
 
 const ThemeSwitchButton = () => {
-  const { theme, setTheme } = useTheme();
-
-  const themeSwitchHandler = () => {
-    if (theme === "dark") {
-      setTheme("light");
-    } else {
-      setTheme("dark");
-    }
-  };
+  const { setTheme } = useTheme();
   return (
-    <div className="">
-      <div onClick={themeSwitchHandler} className="text-2xl cursor-pointer">
-        {theme === "dark" ? <FaRegSun /> : <FaMoon />}
+    <div className="flex gap-4">
+      <div onClick={() => setTheme("light")} className="cursor-pointer text-xl">
+        <FaRegSun />
+      </div>
+      <div onClick={() => setTheme("dark")} className="cursor-pointer text-xl">
+        <FaMoon />
+      </div>
+      <div
+        onClick={() => setTheme("system")}
+        className="cursor-pointer text-xl"
+      >
+        <RiComputerLine />
       </div>
     </div>
   );

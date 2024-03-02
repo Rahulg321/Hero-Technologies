@@ -201,6 +201,7 @@ export type CoreteammemberDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | ContactFormSectionSlice
   | CoreTeamIndexSlice
   | BlogIndexSlice
   | TextBlockSlice
@@ -323,6 +324,36 @@ type BlogIndexSliceVariation = BlogIndexSliceDefault;
 export type BlogIndexSlice = prismic.SharedSlice<
   "blog_index",
   BlogIndexSliceVariation
+>;
+
+/**
+ * Default variation for ContactFormSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactFormSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *ContactFormSection*
+ */
+type ContactFormSectionSliceVariation = ContactFormSectionSliceDefault;
+
+/**
+ * ContactFormSection Shared Slice
+ *
+ * - **API ID**: `contact_form_section`
+ * - **Description**: ContactFormSection
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactFormSectionSlice = prismic.SharedSlice<
+  "contact_form_section",
+  ContactFormSectionSliceVariation
 >;
 
 /**
@@ -542,6 +573,9 @@ declare module "@prismicio/client" {
       BlogIndexSliceDefaultPrimary,
       BlogIndexSliceVariation,
       BlogIndexSliceDefault,
+      ContactFormSectionSlice,
+      ContactFormSectionSliceVariation,
+      ContactFormSectionSliceDefault,
       CoreTeamIndexSlice,
       CoreTeamIndexSliceVariation,
       CoreTeamIndexSliceDefault,

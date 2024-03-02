@@ -1,13 +1,10 @@
 import type { Metadata } from "next";
-import { Inter, Syne, Poppins } from "next/font/google";
 import { syne, poppins } from "./fonts";
 import "./globals.css";
 import clsx from "clsx";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { ThemeProvider } from "@/components/theme-provider";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Hero Technologies: Empowering Growth Through Independent Sponsorship",
@@ -21,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${syne.variable} ${poppins.variable}`}>
+    <html lang="en" className={clsx(syne.variable, poppins.variable)}>
       <body className={clsx("min-h-screen bg-background antialiased")}>
         <ThemeProvider
           attribute="class"

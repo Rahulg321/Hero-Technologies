@@ -6,7 +6,7 @@ import Link from "next/link";
 
 type TeamMemberCardProps = {
   memberName: KeyTextField;
-  memberPosition: KeyTextField;
+  memberPosition?: KeyTextField;
   memberImage: ImageField;
   classname?: string;
   LinkedinLink?: LinkField;
@@ -23,7 +23,7 @@ const TeamMemberCard = ({
 }: TeamMemberCardProps) => {
   return (
     <div
-      className={clsx("p-4 transition duration-300 hover:shadow-xl", classname)}
+      className={clsx("p-4 transition duration-150 hover:shadow-xl", classname)}
     >
       <div className="aspect-h-1 aspect-w-1 relative">
         <PrismicNextImage field={memberImage} fill className=" object-cover" />
@@ -49,7 +49,7 @@ const TeamMemberCard = ({
               className="ml-1 inline-block text-xl italic hover:underline"
               href={BioLink}
             >
-              /Bio
+              Bio
             </Link>
           ) : null}
         </div>

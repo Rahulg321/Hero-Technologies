@@ -4,6 +4,93 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+type AdvisormemberDocumentDataSlicesSlice = LeftImageSliceSlice;
+
+/**
+ * Content for AdvisorMember documents
+ */
+interface AdvisormemberDocumentData {
+  /**
+   * Name field in *AdvisorMember*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: advisormember.name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * Advisor Image field in *AdvisorMember*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: advisormember.advisor_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  advisor_image: prismic.ImageField<never>;
+
+  /**
+   * Slice Zone field in *AdvisorMember*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: advisormember.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<AdvisormemberDocumentDataSlicesSlice> /**
+   * Meta Title field in *AdvisorMember*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: advisormember.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *AdvisorMember*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: advisormember.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *AdvisorMember*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: advisormember.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * AdvisorMember document from Prismic
+ *
+ * - **API ID**: `advisormember`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type AdvisormemberDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<AdvisormemberDocumentData>,
+    "advisormember",
+    Lang
+  >;
+
 type BlogpostDocumentDataSlicesSlice = BlogIndexSlice | TextBlockSlice;
 
 /**
@@ -201,6 +288,7 @@ export type CoreteammemberDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | AdvisorIndexSlice
   | ContactFormSectionSlice
   | CoreTeamIndexSlice
   | BlogIndexSlice
@@ -267,9 +355,40 @@ export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
 export type AllDocumentTypes =
+  | AdvisormemberDocument
   | BlogpostDocument
   | CoreteammemberDocument
   | PageDocument;
+
+/**
+ * Default variation for AdvisorIndex Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AdvisorIndexSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *AdvisorIndex*
+ */
+type AdvisorIndexSliceVariation = AdvisorIndexSliceDefault;
+
+/**
+ * AdvisorIndex Shared Slice
+ *
+ * - **API ID**: `advisor_index`
+ * - **Description**: AdvisorIndex
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AdvisorIndexSlice = prismic.SharedSlice<
+  "advisor_index",
+  AdvisorIndexSliceVariation
+>;
 
 /**
  * Primary content in *BlogIndex → Primary*
@@ -569,6 +688,9 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      AdvisormemberDocument,
+      AdvisormemberDocumentData,
+      AdvisormemberDocumentDataSlicesSlice,
       BlogpostDocument,
       BlogpostDocumentData,
       BlogpostDocumentDataSlicesSlice,
@@ -579,6 +701,9 @@ declare module "@prismicio/client" {
       PageDocumentData,
       PageDocumentDataSlicesSlice,
       AllDocumentTypes,
+      AdvisorIndexSlice,
+      AdvisorIndexSliceVariation,
+      AdvisorIndexSliceDefault,
       BlogIndexSlice,
       BlogIndexSliceDefaultPrimary,
       BlogIndexSliceVariation,

@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 
 export const components = {
+  advisor_index: dynamic(() => import("./AdvisorIndex")),
   blog_index: dynamic(() => import("./BlogIndex")),
   contact_form_section: dynamic(() => import("./ContactFormSection")),
   core_team_index: dynamic(() => import("./CoreTeamIndex")),

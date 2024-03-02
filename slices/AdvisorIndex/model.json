@@ -1,0 +1,16 @@
+{
+  "id": "advisor_index",
+  "type": "SharedSlice",
+  "name": "AdvisorIndex",
+  "description": "AdvisorIndex",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}

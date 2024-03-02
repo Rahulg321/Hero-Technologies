@@ -1,7 +1,7 @@
 {
   "format": "page",
-  "id": "page",
-  "label": "Page",
+  "id": "advisormember",
+  "label": "AdvisorMember",
   "repeatable": true,
   "status": true,
   "json": {
@@ -12,27 +12,27 @@
         },
         "type": "UID"
       },
+      "name": {
+        "type": "Text",
+        "config": {
+          "label": "Name",
+          "placeholder": ""
+        }
+      },
+      "advisor_image": {
+        "type": "Image",
+        "config": {
+          "label": "Advisor Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "advisor_index": {
-              "type": "SharedSlice"
-            },
-            "contact_form_section": {
-              "type": "SharedSlice"
-            },
-            "core_team_index": {
-              "type": "SharedSlice"
-            },
-            "blog_index": {
-              "type": "SharedSlice"
-            },
-            "text_block": {
-              "type": "SharedSlice"
-            },
-            "hero": {
+            "left_image_slice": {
               "type": "SharedSlice"
             }
           }

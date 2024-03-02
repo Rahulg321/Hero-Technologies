@@ -20,13 +20,15 @@ const LeftImageSlice = ({ slice }: LeftImageSliceProps): JSX.Element => {
     >
       <div className="big-container">
         <div className="grid grid-cols-1 md:grid-cols-2">
-          <div>
-            <div className="aspect-h-1 aspect-w-1 relative">
-              <PrismicNextImage
-                field={slice.primary.image}
-                fill
-                className=" object-cover"
-              />
+          <div className="lg:px-16">
+            <div className="sticky top-4">
+              <div className="aspect-h-1 aspect-w-1 relative ">
+                <PrismicNextImage
+                  field={slice.primary.image}
+                  fill
+                  className="object-cover rounded-full"
+                />
+              </div>
             </div>
           </div>
           <div>

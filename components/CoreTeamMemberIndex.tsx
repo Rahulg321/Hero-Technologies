@@ -1,6 +1,7 @@
 import { createClient } from "@/prismicio";
 import React from "react";
 import TeamMemberCard from "./TeamMemberCard";
+import Link from "next/link";
 
 const CoreTeamMemberIndex = async () => {
   // await new Promise((resolve) => setTimeout(resolve, 5000));
@@ -16,39 +17,7 @@ const CoreTeamMemberIndex = async () => {
             memberPosition={member.data.designation}
             LinkedinLink={member.data.linkedinlink}
             memberName={member.data.name}
-          />
-        );
-      })}
-      {coreTeamMembers.map((member, index) => {
-        return (
-          <TeamMemberCard
-            key={index}
-            memberImage={member.data.memberimage}
-            memberPosition={member.data.designation}
-            LinkedinLink={member.data.linkedinlink}
-            memberName={member.data.name}
-          />
-        );
-      })}
-      {coreTeamMembers.map((member, index) => {
-        return (
-          <TeamMemberCard
-            key={index}
-            memberImage={member.data.memberimage}
-            memberPosition={member.data.designation}
-            LinkedinLink={member.data.linkedinlink}
-            memberName={member.data.name}
-          />
-        );
-      })}
-      {coreTeamMembers.map((member, index) => {
-        return (
-          <TeamMemberCard
-            key={index}
-            memberImage={member.data.memberimage}
-            memberPosition={member.data.designation}
-            LinkedinLink={member.data.linkedinlink}
-            memberName={member.data.name}
+            BioLink={`/team/${member.uid}`}
           />
         );
       })}

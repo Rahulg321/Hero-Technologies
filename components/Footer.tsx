@@ -14,11 +14,11 @@ const nav = [
 
 const Footer = () => {
   return (
-    <footer className="block-space border-2">
+    <footer className="block-space border-t-2">
       <div className="big-container grid grid-cols-4 lg:gap-12">
         <div>
           <h3>Hero Technologies</h3>
-          <span>
+          <span className="mt-2 block">
             Publicly-traded independent sponsor with a strategic niche in
             technology, hardware manufacturing, financial services, business
             services, telecom, and transportation.
@@ -28,7 +28,7 @@ const Footer = () => {
           <h4 className="">Quick Links</h4>
           {nav.map((item, index) => {
             return (
-              <div key={index} className="">
+              <div key={index} className="mt-2">
                 <Link href={item.navlink}>{item.navlabel}</Link>
               </div>
             );
@@ -36,7 +36,7 @@ const Footer = () => {
         </div>
         <div>
           <h4>Contact Us</h4>
-          <span className="block">info@herotechnologiesinc.com </span>
+          <span className="block my-2">info@herotechnologiesinc.com </span>
           <span>(302) 538-4165</span>
         </div>
         <div>

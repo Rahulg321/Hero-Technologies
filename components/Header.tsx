@@ -78,13 +78,15 @@ export default Header;
 function NameLogo({}: {}) {
   return (
     <div className="">
-      <Link
-        href="/home"
-        aria-label="Home page"
-        className="font-bold md:text-3xl"
-      >
-        Hero Technologies
-      </Link>
+      <h3>
+        <Link
+          href="/home"
+          aria-label="Home page"
+          className="font-bold md:text-3xl"
+        >
+          Hero Technologies
+        </Link>
+      </h3>
     </div>
   );
 }

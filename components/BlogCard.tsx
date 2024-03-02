@@ -27,9 +27,9 @@ const BlogCard = ({ post }: BlogCardProps) => {
           </span>
         );
       })}
-      <h3>
+      <h2 className="my-2">
         <Link href={`/blogs/${post.uid}`}>{post.data.name}</Link>
-      </h3>
+      </h2>
       <span>{formattedDate}</span>
     </article>
   );

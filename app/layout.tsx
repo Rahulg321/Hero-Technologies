@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Syne, Poppins } from "next/font/google";
+import { syne, poppins } from "./fonts";
 import "./globals.css";
 import clsx from "clsx";
 import Footer from "@/components/Footer";
@@ -20,13 +21,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={clsx(
-          "min-h-screen bg-background antialiased",
-          inter.className
-        )}
-      >
+    <html lang="en" className={`${syne.variable} ${poppins.variable}`}>
+      <body className={clsx("min-h-screen bg-background antialiased")}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

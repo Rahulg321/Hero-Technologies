@@ -9,16 +9,19 @@ import { RiComputerLine } from "react-icons/ri";
 const ThemeSwitchButton = () => {
   const { setTheme } = useTheme();
   return (
-    <div className="flex gap-4">
-      <div onClick={() => setTheme("light")} className="cursor-pointer text-xl">
+    <div className="flex gap-6 mt-2">
+      <div
+        onClick={() => setTheme("light")}
+        className="cursor-pointer text-2xl"
+      >
         <FaRegSun />
       </div>
-      <div onClick={() => setTheme("dark")} className="cursor-pointer text-xl">
+      <div onClick={() => setTheme("dark")} className="cursor-pointer text-2xl">
         <FaMoon />
       </div>
       <div
         onClick={() => setTheme("system")}
-        className="cursor-pointer text-xl"
+        className="cursor-pointer text-2xl"
       >
         <RiComputerLine />
       </div>

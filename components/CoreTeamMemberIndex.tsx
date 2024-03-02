@@ -3,7 +3,7 @@ import React from "react";
 import TeamMemberCard from "./TeamMemberCard";
 
 const CoreTeamMemberIndex = async () => {
-  await new Promise((resolve) => setTimeout(resolve, 5000));
+  // await new Promise((resolve) => setTimeout(resolve, 5000));
   const client = createClient();
   const coreTeamMembers = await client.getAllByType("coreteammember");
   return (

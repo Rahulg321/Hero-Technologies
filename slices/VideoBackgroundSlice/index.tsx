@@ -1,7 +1,7 @@
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import Video from "next-video";
-import backgroundVideo from "@/videos/backgroundNightCity.mp4";
+import backgroundVideo from "@/public/backgroundNightCity.mp4";
 
 /**
  * Props for `VideoBackgroundSlice`.

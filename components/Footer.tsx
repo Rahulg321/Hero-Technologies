@@ -15,7 +15,7 @@ const nav = [
 const Footer = () => {
   return (
     <footer className="block-space border-t-2">
-      <div className="big-container grid grid-cols-4 lg:gap-12">
+      <div className="big-container grid grid-cols-1 gap-6 lg:grid-cols-4 lg:gap-12">
         <div>
           <h3>Hero Technologies</h3>
           <span className="mt-2 block">

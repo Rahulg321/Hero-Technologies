@@ -288,6 +288,7 @@ export type CoreteammemberDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | VideoBackgroundSliceSlice
   | AdvisorIndexSlice
   | ContactFormSectionSlice
   | CoreTeamIndexSlice
@@ -678,6 +679,61 @@ export type TextBlockSlice = prismic.SharedSlice<
   TextBlockSliceVariation
 >;
 
+/**
+ * Primary content in *VideoBackgroundSlice → Primary*
+ */
+export interface VideoBackgroundSliceSliceDefaultPrimary {
+  /**
+   * Heading field in *VideoBackgroundSlice → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video_background_slice.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Tagline field in *VideoBackgroundSlice → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video_background_slice.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tagline: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for VideoBackgroundSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type VideoBackgroundSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<VideoBackgroundSliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *VideoBackgroundSlice*
+ */
+type VideoBackgroundSliceSliceVariation = VideoBackgroundSliceSliceDefault;
+
+/**
+ * VideoBackgroundSlice Shared Slice
+ *
+ * - **API ID**: `video_background_slice`
+ * - **Description**: VideoBackgroundSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type VideoBackgroundSliceSlice = prismic.SharedSlice<
+  "video_background_slice",
+  VideoBackgroundSliceSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -726,6 +782,10 @@ declare module "@prismicio/client" {
       TextBlockSliceDefaultPrimary,
       TextBlockSliceVariation,
       TextBlockSliceDefault,
+      VideoBackgroundSliceSlice,
+      VideoBackgroundSliceSliceDefaultPrimary,
+      VideoBackgroundSliceSliceVariation,
+      VideoBackgroundSliceSliceDefault,
     };
   }
 }

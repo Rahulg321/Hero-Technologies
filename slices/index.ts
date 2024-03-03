@@ -10,4 +10,5 @@ export const components = {
   hero: dynamic(() => import("./Hero")),
   left_image_slice: dynamic(() => import("./LeftImageSlice")),
   text_block: dynamic(() => import("./TextBlock")),
+  video_background_slice: dynamic(() => import("./VideoBackgroundSlice")),
 };

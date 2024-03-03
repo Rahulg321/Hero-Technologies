@@ -20,6 +20,7 @@ const BlogIndex = ({ slice }: BlogIndexProps): JSX.Element => {
       className="block-space"
     >
       <div className="big-container">
+        <h1 className="heading after:dark:bg-white">Latest Blog</h1>
         <Suspense
           fallback={
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">

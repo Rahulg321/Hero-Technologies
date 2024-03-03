@@ -17,6 +17,15 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "about_us_slice": {
+              "type": "SharedSlice"
+            },
+            "about_formula_slice": {
+              "type": "SharedSlice"
+            },
+            "about_strategy_slice": {
+              "type": "SharedSlice"
+            },
             "video_background_slice": {
               "type": "SharedSlice"
             },

@@ -19,13 +19,6 @@
         },
         "type": "UID"
       },
-      "created_at": {
-        "type": "Date",
-        "config": {
-          "label": "Created at",
-          "placeholder": ""
-        }
-      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

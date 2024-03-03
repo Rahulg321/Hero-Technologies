@@ -18,7 +18,7 @@ const Footer = () => {
       <div className="big-container grid grid-cols-1 gap-6 lg:grid-cols-4 lg:gap-12">
         <div>
           <h3>Hero Technologies</h3>
-          <span className="mt-2 block">
+          <span className="mt-2 block lead text-sm">
             Publicly-traded independent sponsor with a strategic niche in
             technology, hardware manufacturing, financial services, business
             services, telecom, and transportation.

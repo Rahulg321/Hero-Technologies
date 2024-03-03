@@ -22,12 +22,12 @@ const BlogCard = ({ post }: BlogCardProps) => {
     <article>
       {post.tags.map((tag, index) => {
         return (
-          <span key={index} className="even:ml-2">
+          <span key={index} className="even:ml-2 italic font-semibold">
             {tag}
           </span>
         );
       })}
-      <h2 className="my-2">
+      <h2 className="my-2 font-bold">
         <Link href={`/blogs/${post.uid}`}>{post.data.name}</Link>
       </h2>
       <span>{formattedDate}</span>

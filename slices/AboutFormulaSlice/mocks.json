@@ -1,0 +1,25 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "mistake",
+				"type": "Text"
+			},
+			"content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Lorem qui commodo do laboris laborum quis commodo. Excepteur excepteur laborum nostrud dolor non est ullamco qui ut eu commodo."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

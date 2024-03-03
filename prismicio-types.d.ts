@@ -109,17 +109,6 @@ interface BlogpostDocumentData {
   name: prismic.KeyTextField;
 
   /**
-   * Created at field in *BlogPost*
-   *
-   * - **Field Type**: Date
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blogpost.created_at
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#date
-   */
-  created_at: prismic.DateField;
-
-  /**
    * Slice Zone field in *BlogPost*
    *
    * - **Field Type**: Slice Zone
@@ -288,6 +277,9 @@ export type CoreteammemberDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | AboutUsSliceSlice
+  | AboutFormulaSliceSlice
+  | AboutStrategySliceSlice
   | VideoBackgroundSliceSlice
   | AdvisorIndexSlice
   | ContactFormSectionSlice
@@ -360,6 +352,171 @@ export type AllDocumentTypes =
   | BlogpostDocument
   | CoreteammemberDocument
   | PageDocument;
+
+/**
+ * Primary content in *AboutFormulaSlice → Primary*
+ */
+export interface AboutFormulaSliceSliceDefaultPrimary {
+  /**
+   * Heading field in *AboutFormulaSlice → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_formula_slice.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Content field in *AboutFormulaSlice → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_formula_slice.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+/**
+ * Default variation for AboutFormulaSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AboutFormulaSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<AboutFormulaSliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *AboutFormulaSlice*
+ */
+type AboutFormulaSliceSliceVariation = AboutFormulaSliceSliceDefault;
+
+/**
+ * AboutFormulaSlice Shared Slice
+ *
+ * - **API ID**: `about_formula_slice`
+ * - **Description**: AboutFormulaSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AboutFormulaSliceSlice = prismic.SharedSlice<
+  "about_formula_slice",
+  AboutFormulaSliceSliceVariation
+>;
+
+/**
+ * Primary content in *AboutStrategySlice → Primary*
+ */
+export interface AboutStrategySliceSliceDefaultPrimary {
+  /**
+   * Heading field in *AboutStrategySlice → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_strategy_slice.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Content field in *AboutStrategySlice → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_strategy_slice.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+/**
+ * Default variation for AboutStrategySlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AboutStrategySliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<AboutStrategySliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *AboutStrategySlice*
+ */
+type AboutStrategySliceSliceVariation = AboutStrategySliceSliceDefault;
+
+/**
+ * AboutStrategySlice Shared Slice
+ *
+ * - **API ID**: `about_strategy_slice`
+ * - **Description**: AboutStrategySlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AboutStrategySliceSlice = prismic.SharedSlice<
+  "about_strategy_slice",
+  AboutStrategySliceSliceVariation
+>;
+
+/**
+ * Primary content in *AboutUsSlice → Primary*
+ */
+export interface AboutUsSliceSliceDefaultPrimary {
+  /**
+   * Heading field in *AboutUsSlice → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_us_slice.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Content field in *AboutUsSlice → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_us_slice.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+/**
+ * Default variation for AboutUsSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AboutUsSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<AboutUsSliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *AboutUsSlice*
+ */
+type AboutUsSliceSliceVariation = AboutUsSliceSliceDefault;
+
+/**
+ * AboutUsSlice Shared Slice
+ *
+ * - **API ID**: `about_us_slice`
+ * - **Description**: AboutUsSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AboutUsSliceSlice = prismic.SharedSlice<
+  "about_us_slice",
+  AboutUsSliceSliceVariation
+>;
 
 /**
  * Default variation for AdvisorIndex Slice
@@ -757,6 +914,18 @@ declare module "@prismicio/client" {
       PageDocumentData,
       PageDocumentDataSlicesSlice,
       AllDocumentTypes,
+      AboutFormulaSliceSlice,
+      AboutFormulaSliceSliceDefaultPrimary,
+      AboutFormulaSliceSliceVariation,
+      AboutFormulaSliceSliceDefault,
+      AboutStrategySliceSlice,
+      AboutStrategySliceSliceDefaultPrimary,
+      AboutStrategySliceSliceVariation,
+      AboutStrategySliceSliceDefault,
+      AboutUsSliceSlice,
+      AboutUsSliceSliceDefaultPrimary,
+      AboutUsSliceSliceVariation,
+      AboutUsSliceSliceDefault,
       AdvisorIndexSlice,
       AdvisorIndexSliceVariation,
       AdvisorIndexSliceDefault,

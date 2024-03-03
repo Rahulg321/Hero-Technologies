@@ -21,19 +21,13 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       backgroundImage={slice.primary.background_image}
       classname={clsx("min-h-[80vh]")}
     >
-      <div className="big-container">
-        <div className="grid grid-cols-1 md:grid-cols-2">
-          <div>
-            <h1 className="md:text-4xl lg:text-6xl text-white">
-              {slice.primary.heading}
-            </h1>
-            <h3 className="mt-2 block md:mt-4 text-white">
-              {slice.primary.tagline}
-            </h3>
-
-            <div></div>
-          </div>
-        </div>
+      <div className="flex items-center flex-col justify-center h-full">
+        <h1 className="md:text-4xl lg:text-6xl text-white">
+          {slice.primary.heading}
+        </h1>
+        <h3 className="mt-2 block md:mt-4 text-white">
+          {slice.primary.tagline}
+        </h3>
       </div>
     </BackgroundImageSection>
   );

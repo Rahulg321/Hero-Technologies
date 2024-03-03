@@ -3,6 +3,9 @@
 import dynamic from "next/dynamic";
 
 export const components = {
+  about_formula_slice: dynamic(() => import("./AboutFormulaSlice")),
+  about_strategy_slice: dynamic(() => import("./AboutStrategySlice")),
+  about_us_slice: dynamic(() => import("./AboutUsSlice")),
   advisor_index: dynamic(() => import("./AdvisorIndex")),
   blog_index: dynamic(() => import("./BlogIndex")),
   contact_form_section: dynamic(() => import("./ContactFormSection")),

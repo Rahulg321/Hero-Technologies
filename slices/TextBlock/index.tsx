@@ -17,7 +17,7 @@ const TextBlock = ({ slice }: TextBlockProps): JSX.Element => {
       className="block-space"
     >
       <div className="narrow-container">
-        <div className="prose prose-p:text-black  md:prose-lg lg:prose-xl prose-slate dark:prose-invert dark:prose-p:text-white  prose-img:rounded-xl prose-headings:underline prose-a:text-blue-600">
+        <div className="prose prose-p:text-black  md:prose-lg  prose-slate dark:prose-invert dark:prose-p:text-white  prose-img:rounded-xl prose-headings:underline prose-a:text-blue-600 prose-h1:heading1">
           <PrismicRichText field={slice.primary.content} />
         </div>
       </div>

@@ -1,7 +1,7 @@
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import Video from "next-video";
-import backgroundVideo from "@/public/backgroundNightCity.mp4";
+import backgroundVideo from "@/public/newYorkNight.mp4";
 
 /**
  * Props for `VideoBackgroundSlice`.
@@ -28,8 +28,8 @@ const VideoBackgroundSlice = ({
         loop
         muted
       />
-      <div className="absolute inset-0 flex flex-col items-center justify-center z-10 text-white">
-        <h1 className="">{slice.primary.heading}</h1>
+      <div className="absolute inset-0 flex flex-col items-center justify-center z-10 text-white px-12 text-pretty text-center">
+        <h1 className="mb-2">{slice.primary.heading}</h1>
         <h3>{slice.primary.tagline}</h3>
       </div>
     </section>

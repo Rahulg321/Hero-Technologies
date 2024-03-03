@@ -1,3 +1,4 @@
+import RichTextBlock from "@/components/RichTextBlock";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 
@@ -14,9 +15,12 @@ const AboutUsSlice = ({ slice }: AboutUsSliceProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      className="block-space"
     >
-      Placeholder component for about_us_slice (variation: {slice.variation})
-      Slices
+      <div className="narrow-container">
+        <h2 className="mb-4">{slice.primary.heading}</h2>
+        <RichTextBlock content={slice.primary.content} />
+      </div>
     </section>
   );
 };

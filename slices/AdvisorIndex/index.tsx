@@ -20,7 +20,7 @@ const AdvisorIndex = ({ slice }: AdvisorIndexProps): JSX.Element => {
       className="block-space"
     >
       <div className="big-container">
-        <h1>Hero Advisors</h1>
+        <h1 className="heading dark:after:bg-white">Hero Advisors</h1>
         <Suspense
           fallback={
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">

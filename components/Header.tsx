@@ -59,6 +59,10 @@ const Header = ({ classname }: HeaderProps) => {
                     onClick={() => {
                       setIsOpen(false);
                     }}
+                    className={clsx(
+                      "",
+                      pathname === item.navlink ? "underline" : ""
+                    )}
                   >
                     {item.navlabel}
                   </Link>
@@ -97,7 +101,11 @@ function DesktopMenu() {
     <div className="hidden gap-4 md:flex">
       {nav.map((item, index) => {
         return (
-          <Link href={item.navlink} key={index}>
+          <Link
+            href={item.navlink}
+            key={index}
+            className={clsx("", pathname === item.navlink ? "underline" : "")}
+          >
             {item.navlabel}
           </Link>
         );

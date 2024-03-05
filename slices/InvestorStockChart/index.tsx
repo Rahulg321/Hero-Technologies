@@ -18,15 +18,19 @@ const InvestorStockChart = ({
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="block-space min-h-[50vh]"
+      className="block-space"
     >
       <div className="big-container">
         <div className="text-center">
-          <div className="mb-4">
-            <h2 className="mb-2">Industry Insights</h2>
-            <p>Stock Information</p>
+          <div className="">
+            <div className="">
+              <h2 className="mb-2">Industry Insights</h2>
+              <p>Stock Information</p>
+            </div>
+            <div className="">
+              <TradingViewWidget />
+            </div>
           </div>
-          <TradingViewWidget />
         </div>
       </div>
     </section>

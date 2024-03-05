@@ -6,19 +6,13 @@ import { AdvancedRealTimeChart } from "react-ts-tradingview-widgets";
 
 function TradingViewWidget() {
   return (
-    <>
+    <div className="h-[70vh]">
       <AdvancedRealTimeChart
         theme="dark"
         symbol="HENC"
-        height={"610"}
-        width={"800"}
+        autosize={true}
       ></AdvancedRealTimeChart>
-      {/* <TechnicalAnalysis
-        colorTheme="dark"
-        height={"610"}
-        width={"600"}
-      ></TechnicalAnalysis> */}
-    </>
+    </div>
   );
 }
 

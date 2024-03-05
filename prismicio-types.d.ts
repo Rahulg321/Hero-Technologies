@@ -277,6 +277,7 @@ export type CoreteammemberDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | InvestorContentSliceSlice
   | AboutUsSliceSlice
   | AboutFormulaSliceSlice
   | AboutStrategySliceSlice
@@ -726,6 +727,36 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Default variation for InvestorContentSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type InvestorContentSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *InvestorContentSlice*
+ */
+type InvestorContentSliceSliceVariation = InvestorContentSliceSliceDefault;
+
+/**
+ * InvestorContentSlice Shared Slice
+ *
+ * - **API ID**: `investor_content_slice`
+ * - **Description**: InvestorContentSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type InvestorContentSliceSlice = prismic.SharedSlice<
+  "investor_content_slice",
+  InvestorContentSliceSliceVariation
+>;
+
+/**
  * Primary content in *LeftImageSlice → Primary*
  */
 export interface LeftImageSliceSliceDefaultPrimary {
@@ -957,6 +988,9 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      InvestorContentSliceSlice,
+      InvestorContentSliceSliceVariation,
+      InvestorContentSliceSliceDefault,
       LeftImageSliceSlice,
       LeftImageSliceSliceDefaultPrimary,
       LeftImageSliceSliceVariation,

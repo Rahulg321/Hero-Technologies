@@ -17,6 +17,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "investor_stock_chart": {
+              "type": "SharedSlice"
+            },
             "investor_content_slice": {
               "type": "SharedSlice"
             },

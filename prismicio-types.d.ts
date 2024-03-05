@@ -277,6 +277,7 @@ export type CoreteammemberDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | InvestorStockChartSlice
   | InvestorContentSliceSlice
   | AboutUsSliceSlice
   | AboutFormulaSliceSlice
@@ -757,6 +758,36 @@ export type InvestorContentSliceSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Default variation for InvestorStockChart Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type InvestorStockChartSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *InvestorStockChart*
+ */
+type InvestorStockChartSliceVariation = InvestorStockChartSliceDefault;
+
+/**
+ * InvestorStockChart Shared Slice
+ *
+ * - **API ID**: `investor_stock_chart`
+ * - **Description**: InvestorStockChart
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type InvestorStockChartSlice = prismic.SharedSlice<
+  "investor_stock_chart",
+  InvestorStockChartSliceVariation
+>;
+
+/**
  * Primary content in *LeftImageSlice → Primary*
  */
 export interface LeftImageSliceSliceDefaultPrimary {
@@ -991,6 +1022,9 @@ declare module "@prismicio/client" {
       InvestorContentSliceSlice,
       InvestorContentSliceSliceVariation,
       InvestorContentSliceSliceDefault,
+      InvestorStockChartSlice,
+      InvestorStockChartSliceVariation,
+      InvestorStockChartSliceDefault,
       LeftImageSliceSlice,
       LeftImageSliceSliceDefaultPrimary,
       LeftImageSliceSliceVariation,

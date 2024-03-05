@@ -1,0 +1,16 @@
+{
+  "id": "investor_stock_chart",
+  "type": "SharedSlice",
+  "name": "InvestorStockChart",
+  "description": "InvestorStockChart",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}

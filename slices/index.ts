@@ -12,6 +12,7 @@ export const components = {
   core_team_index: dynamic(() => import("./CoreTeamIndex")),
   hero: dynamic(() => import("./Hero")),
   investor_content_slice: dynamic(() => import("./InvestorContentSlice")),
+  investor_stock_chart: dynamic(() => import("./InvestorStockChart")),
   left_image_slice: dynamic(() => import("./LeftImageSlice")),
   text_block: dynamic(() => import("./TextBlock")),
   video_background_slice: dynamic(() => import("./VideoBackgroundSlice")),

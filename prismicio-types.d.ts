@@ -859,6 +859,20 @@ export interface VideoBackgroundSliceSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   tagline: prismic.KeyTextField;
+
+  /**
+   * BackgroundVideoCity field in *VideoBackgroundSlice → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: NewYork
+   * - **API ID Path**: video_background_slice.primary.backgroundvideocity
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  backgroundvideocity: prismic.SelectField<
+    "NewYork" | "London" | "Chicago" | "WashingtonDC" | "Tokyo",
+    "filled"
+  >;
 }
 
 /**

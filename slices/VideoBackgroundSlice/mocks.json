@@ -12,6 +12,11 @@
 				"__TYPE__": "FieldContent",
 				"value": "weight",
 				"type": "Text"
+			},
+			"backgroundvideocity": {
+				"__TYPE__": "FieldContent",
+				"value": "NewYork",
+				"type": "Select"
 			}
 		},
 		"items": []

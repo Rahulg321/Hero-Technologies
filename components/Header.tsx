@@ -9,6 +9,7 @@ import { MdMenu, MdClose } from "react-icons/md";
 type HeaderProps = {
   classname?: string;
 };
+
 const nav = [
   { navlink: "/home", navlabel: "Home" },
   { navlink: "/blogs", navlabel: "Blog" },
@@ -104,7 +105,10 @@ function DesktopMenu() {
           <Link
             href={item.navlink}
             key={index}
-            className={clsx("", pathname === item.navlink ? "underline" : "")}
+            className={clsx(
+              "font-semibold",
+              pathname === item.navlink ? "underline" : ""
+            )}
           >
             {item.navlabel}
           </Link>

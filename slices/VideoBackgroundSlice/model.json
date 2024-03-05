@@ -25,6 +25,21 @@
             "label": "Tagline",
             "placeholder": ""
           }
+        },
+        "backgroundvideocity": {
+          "type": "Select",
+          "config": {
+            "label": "BackgroundVideoCity",
+            "placeholder": "",
+            "options": [
+              "NewYork",
+              "London",
+              "Chicago",
+              "WashingtonDC",
+              "Tokyo"
+            ],
+            "default_value": "NewYork"
+          }
         }
       },
       "items": {}

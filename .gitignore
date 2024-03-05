@@ -6,7 +6,7 @@
 .pnp.js
 .yarn/install-state.gz
 
-# /videos
+/videos
 
 
 # testing
@@ -43,4 +43,18 @@ videos/*
 !videos/*.json
 !videos/*.js
 !videos/*.ts
+public/_next-video
+
+# next-video
+videos/*
+!videos/*.json
+!videos/*.js
+!videos/*.ts
+public/_next-video
+
+# next-video
+backgroundVideos/*
+!backgroundVideos/*.json
+!backgroundVideos/*.js
+!backgroundVideos/*.ts
 public/_next-video

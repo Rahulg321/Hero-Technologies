@@ -63,7 +63,9 @@ const VideoBackgroundSlice = ({
         muted
       />
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10 text-white px-12 text-pretty text-center">
-        <span className="mb-2">{slice.primary.heading}</span>
+        <span className="mb-2 text-2xl lg:text-4xl">
+          {slice.primary.heading}
+        </span>
         <span>{slice.primary.tagline}</span>
       </div>
     </section>

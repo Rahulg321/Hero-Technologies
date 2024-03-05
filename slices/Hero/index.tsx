@@ -19,15 +19,15 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       backgroundImage={slice.primary.background_image}
-      classname={clsx("min-h-[80vh]")}
+      classname={clsx("min-h-[80vh] px-4")}
     >
-      <div className="flex items-center flex-col justify-center h-full">
-        <h1 className="md:text-4xl lg:text-6xl text-white">
+      <div className="flex items-center flex-col justify-center h-full px-4">
+        <span className=" text-white mb-2 text-2xl lg:text-4xl">
           {slice.primary.heading}
-        </h1>
-        <h3 className="mt-2 block md:mt-4 text-white">
+        </span>
+        <span className="mt-2 block md:mt-4 text-white">
           {slice.primary.tagline}
-        </h3>
+        </span>
       </div>
     </BackgroundImageSection>
   );

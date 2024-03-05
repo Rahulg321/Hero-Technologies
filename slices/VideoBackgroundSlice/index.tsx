@@ -53,7 +53,7 @@ const VideoBackgroundSlice = ({
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="relative overflow-hidden bg-slate-900"
+      className="relative overflow-hidden bg-slate-900 min-h-[75vh] max-h-[80vh]"
     >
       <video
         src={imageURL}

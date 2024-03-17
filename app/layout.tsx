@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { syne, poppins } from "./fonts";
+import { montserrat, hind } from "./fonts";
 import "./globals.css";
 import clsx from "clsx";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { ThemeProvider } from "@/components/theme-provider";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: "Hero Technologies: Empowering Growth Through Independent Sponsorship",
@@ -18,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={clsx(syne.variable, poppins.variable)}>
+    <html lang="en" className={clsx(montserrat.variable, hind.variable)}>
       <body className={clsx("min-h-screen bg-background antialiased")}>
         <ThemeProvider
           attribute="class"
@@ -33,6 +34,7 @@ export default function RootLayout({
           </main>
         </ThemeProvider>
       </body>
+      <GoogleAnalytics gaId="G-MPXD3H5S29" />
     </html>
   );
 }

@@ -23,7 +23,7 @@ const InvestorStockChart = ({
       data-slice-variation={slice.variation}
       className="block-space"
     >
-      <div className="big-container">
+      <div className-="bigcontainer">
         <div className="text-center">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="">

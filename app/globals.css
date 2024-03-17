@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 240 degrees, 100%, 99%;
+    --background: 240, 100%, 99%;
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
@@ -102,7 +102,7 @@
 }
 
 html {
-  font-family: var(--font-poppins);
+  font-family: var(--font-hind);
 }
 
 h1,
@@ -111,7 +111,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-syne);
+  font-family: var(--font-montserrat);
 }
 
 .heading::after {

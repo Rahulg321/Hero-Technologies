@@ -1,14 +1,16 @@
-import { Syne, Poppins } from "next/font/google";
+import { Syne, Poppins, Montserrat, Hind } from "next/font/google";
 
-export const poppins = Poppins({
+export const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-poppins",
+  variable: "--font-montserrat",
   weight: ["100", "200", "300", "400", "500", "600", "700"],
   fallback: ["system-ui", "arial"],
 });
 
-export const syne = Syne({
+export const hind = Hind({
   subsets: ["latin"],
-  variable: "--font-syne",
+  variable: "--font-hind",
+  weight: [ "300", "400", "500", "600", "700"],
   fallback: ["system-ui", "arial"],
 });
+
